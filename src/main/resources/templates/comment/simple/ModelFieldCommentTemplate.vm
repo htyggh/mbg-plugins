@@ -1,0 +1,4 @@
+## pojo类字段简单注释模版
+/**
+ * 字段描述：${columnRemark} #if($isPK) [主键]#elseif($isNull) [可空]#{else} [不可空]#end#if($isAutoIncrement) [自增]#end [默认值：#if(!$defaultValue)无默认值]#{else}${defaultValue}]#end
+ */

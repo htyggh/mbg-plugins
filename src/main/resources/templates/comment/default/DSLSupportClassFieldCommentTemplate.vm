@@ -1,0 +1,8 @@
+## DSL支持类 字段默认注释模版
+/**
+ * <p>字段描述：${tableName}表${columnName}列，列对象</p>
+ * <p>是否主键：#if($isPK)是#{else}否#end</p>
+ * <p>是否自增：#if($isAutoIncrement)是#{else}否#end</p>
+ * <p>是否可空：#if($isNull)是#{else}否#end</p>
+ * <p>默认值：#if (!$defaultValue)无默认值#{else}${defaultValue}#end</p>
+ */

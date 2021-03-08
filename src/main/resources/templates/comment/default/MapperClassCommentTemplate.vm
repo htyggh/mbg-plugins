@@ -1,0 +1,8 @@
+## mapper接口默认类注释模版
+/**
+ * ${tableName}表mapper接口
+ *
+ * @author $!{author}
+ * @date ${createDate}
+ * @version $!{version}
+ */

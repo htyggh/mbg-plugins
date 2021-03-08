@@ -1,0 +1,14 @@
+## 内部类类默认方法注释模版
+#parse("/templates/comment/ExampleClassUtils.vm")
+#set($exampleMethod = '')
+#getExampleMethodDescription($methodName $exampleMethod)
+/**
+ * <p>方法描述：${exampleMethod["description"]}</p>
+ *
+ #foreach($parameter in ${parameters})
+ * @param $parameter.name ${exampleMethod["parameterDescription"]}
+ #end##
+ #if(!$isVoid)
+ * @return ${exampleMethod['returnDescription']}
+ #end
+ */

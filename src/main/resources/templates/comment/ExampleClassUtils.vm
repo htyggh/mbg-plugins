@@ -1,0 +1,30 @@
+#set($exampleFields = {"orderByClause" : {"description" : "${tableName}表排序语句"},
+    "distinct" : {"description" : "是否是去重后的${tableName}表数据"},
+    "oredCriteria" : {"description" : "${tableName}表查询条件集合"}
+})
+#set($exampleInnerClasses = {"GeneratedCriteria" : { "description" : "${tableName}表查询条件构建器"},
+    "Criterion" : { "description" : "${tableName}表查询标准"},
+    "Criteria" : { "description" : "${tableName}表查询条件"}
+})
+#set($exampleMethods = {"setOrderByClause" : {"description" : "赋予${tableName}表排序语句", "parameterDescription" :
+    "${tableName}表排序语句"},
+    "getOrderByClause" : { "description" : "获取${tableName}表排序语句", "returnDescription" : "${tableName}表排序语句"},
+    "setDistinct" : { "description" : "赋予是否去重", "parameterDescription" : "是否去重"},
+    "isDistinct" : { "description" : "获取是否去重", "returnDescription" : "是否去重"},
+    "getOredCriteria" : { "description" : "获取${tableName}表查询条件集合", "returnDescription" : "${tableName}表查询条件集合"},
+    "or" : { "description" : "添加${tableName}表查询条件", "parameterDescription" : "${tableName}表查询条件",
+    "returnDescription" : "${tableName}表查询条件"},
+    "createCriteria" : { "description" : "创建一个${tableName}表查询条件，并添加到查询条件集合中", "returnDescription" :
+    "${tableName}表查询条件"},
+    "createCriteriaInternal" : { "description" : "创建一个${tableName}表查询条件", "returnDescription" : "${tableName}表查询条件"},
+    "clear" : { "description" : "清空${tableName}表查询构建器"}
+})
+#macro(getExampleFieldDescription $exampleFieldName $exampleField)
+    #set($exampleField = $exampleFields[$exampleFieldName])
+#end
+#macro(getExampleInnerClassDescription $exampleInnerClassName $exampleInnerClass)
+    #set($exampleInnerClass = $exampleInnerClasses[$exampleInnerClassName])
+#end
+#macro(getExampleMethodDescription $exampleMethodName $exampleMethod)
+    #set($exampleMethod = $exampleMethods[$exampleMethodName])
+#end

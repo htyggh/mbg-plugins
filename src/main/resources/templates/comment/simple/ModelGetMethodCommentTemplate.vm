@@ -1,0 +1,6 @@
+## pojo类getter方法简单注释模版
+/**
+ * 描述：获取${columnRemark}
+ *
+ * @return ${columnRemark}#if($isPK) [主键]#elseif($isNull) [可空]#{else} [不可空]#end [默认值：#if(!$defaultValue)无默认值]#{else}${defaultValue}]#end
+ */

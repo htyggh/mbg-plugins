@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.htyggh</groupId>
+    <artifactId>mbg-plugins</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>mbg-plugins</name>
+    <description>mybatisGenerator插件库</description>
+    <packaging>jar</packaging>
+
+    <developers>
+        <developer>
+            <id>htyggh</id>
+            <name>黄天雨</name>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <mybatis.generator.version>1.4.0</mybatis.generator.version>
+        <velocity.version>2.1</velocity.version>
+        <freemarker.version>2.3.28</freemarker.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- mybatis自动构建工具 -->
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>${mybatis.generator.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- velocity模版引擎 -->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>${velocity.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- freemarker模版引擎 -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>${freemarker.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <!-- 打包源码时忽略资源文件 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>/</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+
+    <!-- maven私库 -->
+    <distributionManagement>
+        <repository>
+            <id>aliyun-maven-private-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2049068-release-brUa4R/</url>
+        </repository>
+        <snapshotRepository>
+            <id>aliyun-maven-private-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2049068-snapshot-hBclWj/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

@@ -1,0 +1,11 @@
+#macro(addEqualsPrologue)
+if (this == o) return true;
+if (o == null || getClass() != o.getClass()) return false;
+if (!super.equals(o)) return false;
+#end
+#macro(addClassInstance)
+${class.getType().getShortName()} that = (${class.getType().getShortName()}) o;
+#end
+#macro(endaddDoubleFieldComparisonConditionDirect $field)
+
+#end

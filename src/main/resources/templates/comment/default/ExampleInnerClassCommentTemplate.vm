@@ -1,0 +1,11 @@
+## Example类默认内部类注释模版
+#parse("/templates/comment/ExampleClassUtils.vm")
+#set($exampleInnerClass = '')
+#getExampleInnerClassDescription($innerClassName $exampleInnerClass)
+/**
+ * ${exampleInnerClass["description"]}
+ *
+ * @author $!{author}
+ * @date ${createDate}
+ * @version $!{version}
+ */

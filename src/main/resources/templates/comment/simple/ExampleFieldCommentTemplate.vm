@@ -1,0 +1,7 @@
+## example类简单字段注释模版
+#parse("/templates/comment/ExampleClassUtils.vm")
+#set($exampleField = '')
+#getExampleFieldDescription($fieldName $exampleField)
+/**
+ * <p>字段描述：${exampleField["description"]}</p>
+ */

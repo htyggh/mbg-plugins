@@ -1,0 +1,13 @@
+## mapper接口方法默认注释模版
+#parse("/templates/comment/MapperUtils.vm")
+#set($method = '')
+#getMethodDescription($methodName $method)
+/**
+ * <p>方法描述：${method['description']}</p>
+ *
+ #foreach($parameter in ${parameters})
+ * @param $parameter.name #getParameterDescription($parameter.name)#end
+ #if(!$isVoid)
+ * @return ${method['returnDescription']}
+ #end
+ */

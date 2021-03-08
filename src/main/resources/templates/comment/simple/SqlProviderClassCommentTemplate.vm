@@ -1,0 +1,8 @@
+## SqlProvider类 简单类注释模版
+/**
+ * ${tableName}表SQL生成器
+ *
+ * @author $!{author}
+ * @date ${createDate}
+ * @version $!{version}
+ */

@@ -1,0 +1,8 @@
+## DSL支持类 默认类注释模版
+/**
+* ${tableName}表DSL支持类
+*
+* @author $!{author}
+* @date ${createDate}
+* @version $!{version}
+*/

@@ -1,0 +1,8 @@
+## pojo类 默认类注释模版
+/**
+ * ${tableName}表实体类
+ *
+ * @author $!{author}
+ * @date ${createDate}
+ * @version $!{version}
+ */

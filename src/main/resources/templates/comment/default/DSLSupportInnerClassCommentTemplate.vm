@@ -1,0 +1,8 @@
+## DSL支持类 默认内部类注释模版
+/**
+ * ${tableName}表，表对象
+ *
+ * @author $!{author}
+ * @date ${createDate}
+ * @version $!{version}
+ */

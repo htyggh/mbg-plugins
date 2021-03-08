@@ -1,0 +1,42 @@
+#set($methods = {"countByExample" : {"description" : "根据指定的条件查询${tableName}表的记录数", "returnDescription" : "${tableName}表符合条件的记录数"},
+    "deleteByExample" : {"description" : "根据指定的条件删除${tableName}表记录", "returnDescription" : "${tableName}表符合条件且删除成功的数量"},
+    "deleteByPrimaryKey" : {"description" :"根据主键删除${tableName}表记录", "returnDescription" : "${tableName}表符合条件且删除成功的数量"},
+    "insert" : {"description" : "向${tableName}表添加记录", "returnDescription" : "${tableName}表记录添加成功的数量"},
+    "insertSelective" : {"description" : "向${tableName}表添加记录（为null的字段不进行处理）", "returnDescription" : "${tableName}表记录添加成功的数量"},
+    "selectByExample" : {"description" : "根据指定的条件查询符合条件的${tableName}表记录", "returnDescription" : "${tableName}表符合条件的记录列表"},
+    "selectByPrimaryKey" : {"description" : "根据指定主键获取一条${tableName}表记录", "returnDescription" : "${tableName}表符合条件的记录"},
+    "updateByExampleSelective" : {"description" : "根据指定的条件更新${tableName}表记录（为null的字段不进行处理）", "returnDescription" : "${tableName}表符合条件且更新成功的记录数量"},
+    "updateByExample" : {"description" :"根据指定的条件更新${tableName}表记录", "returnDescription" : "${tableName}表符合条件且更新成功的记录数量"},
+    "updateByPrimaryKeySelective":{"description" : "根据主键更新${tableName}表记录（为null的字段不进行处理）", "returnDescription" :"${tableName}表符合条件且更新成功的记录数量"},
+    "updateByPrimaryKey" : {"description" : "根据主键更新${tableName}表记录", "returnDescription" : "${tableName}表符合条件且更新成功的记录数量"},
+    "selectAll" : {"description" : "查询${tableName}表所有记录", "returnDescription" : "${tableName}表所有记录"},
+    "applyWhere" : {"description" : "应用查询条件"},
+    "count" : {"description" : "查询${tableName}表数据数量", "returnDescription" : "${tableName}表数据数量"},
+    "delete" : {"description" : "删除${tableName}表数据", "returnDescription" : "${tableName}表被删除的数据数量"},
+    "selectOne" : {"description" : "查询${tableName}表一条数据", "returnDescription" : "${tableName}表符合条件的一条数据"},
+    "selectMany" : {"description" : "查询${tableName}表多条数据", "returnDescription" : "${tableName}表符合条件的多条数据"},
+    "update" : {"description" : "修改${tableName}表数据", "returnDescription" : "${tableName}表被修改的数据数量"},
+    "insertMultiple" : {"description" : "向${tableName}表添加多条记录", "returnDescription" : "${tableName}表记录添加成功的数量"},
+    "select" : {"description" : "查询${tableName}表添记录", "returnDescription" : "${tableName}表符合条件的记录列表"},
+    "selectDistinct" : {"description" : "查询${tableName}表添记录(去重))", "returnDescription" : "${tableName}表符合条件且去重的记录列表"},
+    "updateAllColumns" : {"description" : "向DSL对象添加修改所有列", "returnDescription" : "处理后的DSL"},
+    "updateSelectiveColumns" : {"description" : "向DSL对象添加修改所有列（为null的字段不进行处理）", "returnDescription" : "处理后的DSL"}
+})
+#macro(getMethodDescription $methodName $method)
+#set($method = $methods[$methodName])
+#end
+#macro(getParameterDescription $parameterName)
+#if($parameterName == 'example')${tableName}表查询条件构建器
+#elseif($parameterName == 'record')${tableName}表实体
+#elseif($parameterName == 'records')${tableName}表实体集合
+#elseif($parameterName == 'completer')Sql补全器
+#elseif($parameterName == 'sql')sql语句
+#elseif($parameterName == 'dsl')dsl对象
+#elseif($parameterName == 'includeExamplePhrase')是否引入查询条件构建器内的条件
+#elseif($parameterName == 'selectStatement')select语句
+#elseif($parameterName == 'deleteStatement')delete语句
+#elseif($parameterName == 'insertStatement')insert语句
+#elseif($parameterName == 'updateStatement')update语句
+#else${tableName}表主键
+#end
+#end
